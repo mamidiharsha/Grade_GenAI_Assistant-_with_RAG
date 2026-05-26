@@ -267,39 +267,6 @@ project/
 
 ---
 
-## 🌐 Deployment
-
-### Render
-
-1. Create a new Web Service on [Render](https://render.com)
-2. Connect your GitHub repository
-3. Set build command: `pip install -r requirements.txt`
-4. Set start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-5. Add environment variable: `GEMINI_API_KEY`
-
-### Railway
-
-1. Create a new project on [Railway](https://railway.app)
-2. Connect your GitHub repository
-3. Add environment variable: `GEMINI_API_KEY`
-4. Railway will set `PORT` automatically.
-5. Railway will use the included `Procfile` to start the app.
-6. Deploy the project.
-
-### Docker (Optional)
-
-```dockerfile
-FROM python:3.10-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
----
-
 ## 📊 Error Handling
 
 | Scenario | Response |
