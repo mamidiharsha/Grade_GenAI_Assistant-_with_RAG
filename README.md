@@ -282,7 +282,9 @@ project/
 1. Create a new project on [Railway](https://railway.app)
 2. Connect your GitHub repository
 3. Add environment variable: `GEMINI_API_KEY`
-4. Railway auto-detects Python and deploys
+4. Railway will set `PORT` automatically.
+5. Railway will use the included `Procfile` to start the app.
+6. Deploy the project.
 
 ### Docker (Optional)
 

@@ -181,9 +181,12 @@ async def global_exception_handler(request: Request, exc: Exception):
 if __name__ == "__main__":
     import uvicorn
 
+    port = int(os.getenv("PORT", "8000"))
+    reload_flag = os.getenv("RELOAD", "false").lower() in ("1", "true", "yes")
+
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
-        port=8000,
-        reload=True,
+        port=port,
+        reload=reload_flag,
     )
